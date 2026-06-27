@@ -7,6 +7,13 @@
 > **Logging:** Natural language ("did some calf raises and a couple sets of rows").
 > **AI:** Calls the Claude API with Mike's own key to read history + write/modify workouts.
 
+> **Locked decisions & granular specs (added 2026-06-27):** the open questions in §11 are now
+> resolved or flagged. Deep build detail lives in `docs/`, referenced from the relevant section:
+> - `docs/phase-1-spec.md` — the exact, testable Phase 1 build contract (referenced from §10).
+> - `docs/muscle-taxonomy.md` — reconciles the two muscle-group lists; provisional set + TODOs (§3.1).
+>
+> This doc stays the master; the `docs/` files hold the granular detail.
+
 ---
 
 ## 1. The problem this actually solves
@@ -60,6 +67,11 @@ core`
 Each carries tuning constants (see §5): recovery time-constant `τ`, and weekly volume
 landmarks `MEV / MAV / MRV`.
 
+> The exact group list is **not yet final** (the §3.1 list and the `exercise-library.md`
+> coverage check differ). `docs/muscle-taxonomy.md` reconciles them and gives a provisional set
+> Phase 1 seeds from. Finalizing the list + the tuning constants is an OWNER TODO and a Phase 2
+> prerequisite (see §11).
+
 ### 3.2 `Exercise`
 A movement in the library. Fields:
 
@@ -74,8 +86,8 @@ A movement in the library. Fields:
 | `defaultEffort` | `medium` | fallback when NL omits it |
 | `comfortRating` | 1–5 (Mike-set) | bias toward "exercises I feel comfortable doing" |
 
-Seeded with **Mike's comfortable exercises** (he supplies the starter list — see Open
-Questions), each pre-tagged for his constraints.
+Seeded from **`exercise-library.md`** (Phase 0 complete: Mike's starter list, 27 movements,
+each pre-tagged for his constraints). Phase 1 exports it to the app's JSON seed.
 
 ### 3.3 `SetLog` — the atomic unit of capture
 One logged set (or a cluster of sets). Intentionally tolerant of missing data:
@@ -356,7 +368,7 @@ key and the data.
 | Phase | Deliverable | Why this order |
 |-------|-------------|----------------|
 | **0** | This design doc + Mike's starter exercise list + agreed muscle taxonomy ✅ *(library seeded in `exercise-library.md`, 2026-06-27)* | align before code |
-| **1** | Xcode project, data model, **Log screen + NL parse** working end-to-end | capture is the core value; prove it first |
+| **1** | Xcode project, data model, **Log screen + NL parse** working end-to-end. Full build contract: `docs/phase-1-spec.md` | capture is the core value; prove it first |
 | **2** | **Balance screen** (volume + readiness from real logged data) | the over/under answer |
 | **3** | **Today screen** — Claude generation + swap with clinical constraints | the planner |
 | **4** | **Coach Agent** — chat surface + tool layer (§7b), auto/confirm tiers, change-undo log, clinical-deferral guardrail | the "manage my fitness" agent |
@@ -365,20 +377,29 @@ key and the data.
 
 ---
 
-## 11. Open questions for Mike
+## 11. Decisions + open questions
 
-1. **Starter exercise list.** What ~12–20 movements do you feel comfortable doing across a
-   3×/week split? I'll seed the library and pre-tag each for your constraints.
-2. **Effort vs. reps.** Confirm we **drop rep-counting** and track `light/medium/hard` effort
-   + set count instead. (I think yes, given your description — but it's your call.)
-3. **Split style.** Full-body 3×/week, or upper/lower/full, or let Claude decide each session
-   from the ledger?
-4. **App name.** *Anchor* is a placeholder. Want something else?
-5. **The exercise-science constants** (§5 MEV/MAV/MRV + recovery τ) — OK for me to research
-   and propose evidence-grounded defaults you can then adjust per muscle?
-6. **iCloud sync** in v1, or keep it purely on-device to start?
+Updated 2026-06-27. Resolved items are locked; open items are flagged `OWNER TODO` and do not
+block Phase 1 (capture only).
+
+### Resolved (locked)
+1. **Starter exercise list — DONE.** `exercise-library.md` (27 movements, pre-tagged). Phase 0 complete.
+2. **Effort vs. reps — DROP rep-counting.** Track `light/medium/hard` effort + set count.
+   `reps` is nullable; "didn't count" is a first-class valid state.
+3. **Split style — full-body 3×/week.** Claude rotates equivalence-class variants for freshness.
+4. **App name — Anchor** (still a placeholder Mike can rename). Bundle id `com.mrihm.anchor`
+   (placeholder, Mike will change).
+6. **Sync — local-first now; iCloud/CloudKit is v2** (Phase 5), not v1.
+
+### Open (OWNER TODO — not blocking Phase 1)
+5. **Exercise-science constants** (§5 MEV/MAV/MRV + recovery τ): research and propose
+   evidence-grounded per-muscle defaults Mike then adjusts. Needed before Phase 2 (Balance).
+7. **Final muscle taxonomy:** reconcile the §3.1 list with the library; see
+   `docs/muscle-taxonomy.md`. Phase 2 prerequisite.
+8. **Biceps / forearms coverage:** add direct work (note `elbow_monitor` from the ulnar history)
+   or leave as secondary-only. See `docs/muscle-taxonomy.md`.
 
 ---
 
-*Next step once you've reacted to this: I lock the muscle taxonomy + your starter exercise
-list (Phase 0), then scaffold the Xcode project and build the Log screen first (Phase 1).*
+*Next step: build **Phase 1** to the contract in `docs/phase-1-spec.md` (Xcode project + data
+model + Log screen + NL parse). Compile + Simulator run must happen on a Mac.*

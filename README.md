@@ -42,8 +42,10 @@ clinicians.
 
 | File | What it is |
 |------|------------|
-| [`DESIGN.md`](DESIGN.md) | Full design doc (v0.1): problem, data model, recovery/volume algorithm, NL logging pipeline, Coach Agent spec (§7b), iOS architecture, roadmap, open questions |
+| [`DESIGN.md`](DESIGN.md) | **Master design doc** (v0.1): problem, data model, recovery/volume algorithm, NL logging pipeline, Coach Agent spec (§7b), iOS architecture, roadmap, decisions + open questions. References the granular `docs/` files. |
 | [`exercise-library.md`](exercise-library.md) | Seed exercise library — movements mapped to muscle groups, equivalence classes (swap pools), and clinical constraint tags; proposed 3×/week full-body split |
+| [`docs/phase-1-spec.md`](docs/phase-1-spec.md) | Granular Phase 1 build contract: exact scope, data model, seed loader, Log screen, `SetLogParser` (mock + Claude), Settings/Keychain, acceptance criteria |
+| [`docs/muscle-taxonomy.md`](docs/muscle-taxonomy.md) | Reconciles the two muscle-group lists into one provisional set; flags the taxonomy + tuning-constant TODOs |
 | `README.md` | This file |
 
 ## Tech stack (planned)
