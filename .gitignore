@@ -1,0 +1,36 @@
+# Xcode / Swift
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+xcuserdata/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.perspectivev3
+!default.perspectivev3
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Secrets — never commit the Anthropic API key or any local config holding it
+*.xcconfig.local
+Secrets.plist
+.env
+.env.*
+
+# CocoaPods / Carthage (if ever used)
+Pods/
+Carthage/Build/
+
+# Misc
+*.log
