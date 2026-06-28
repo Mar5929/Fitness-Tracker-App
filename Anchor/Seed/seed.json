@@ -1,0 +1,369 @@
+{
+  "version": 1,
+  "note": "Generated from exercise-library.md (seed v0.1). exercise-library.md stays the human-readable source of truth; regenerate this file when it changes. Tuning constants (tau/mev/mav/mrv) are OWNER TODO placeholders (DESIGN.md §5, §11) and are NOT used by the Phase 1 Log screen.",
+  "muscleGroups": [
+    { "name": "chest",         "displayName": "Chest",          "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "upper_back",    "displayName": "Upper Back",     "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "lats",          "displayName": "Lats",           "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "traps",         "displayName": "Traps",          "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "front_delts",   "displayName": "Front Delts",    "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "side_delts",    "displayName": "Side Delts",     "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "rear_delts",    "displayName": "Rear Delts",     "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "biceps",        "displayName": "Biceps",         "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "triceps",       "displayName": "Triceps",        "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "forearms",      "displayName": "Forearms",       "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "quads",         "displayName": "Quads",          "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "hamstrings",    "displayName": "Hamstrings",     "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "glutes",        "displayName": "Glutes",         "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "erectors",      "displayName": "Erectors",       "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "hip_abductors", "displayName": "Hip Abductors",  "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "hip_adductors", "displayName": "Hip Adductors",  "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "hip_flexors",   "displayName": "Hip Flexors",    "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "calves",        "displayName": "Calves",         "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "tibialis",      "displayName": "Tibialis",       "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "core",          "displayName": "Core",           "tau": 0, "mev": 0, "mav": 0, "mrv": 0 },
+    { "name": "neck",          "displayName": "Neck",           "tau": 0, "mev": 0, "mav": 0, "mrv": 0 }
+  ],
+  "exercises": [
+    {
+      "name": "Treadmill walking",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["calves"],
+      "equivalenceClass": "steady_cardio",
+      "pattern": "cardio",
+      "clinicalTags": ["spine_protective"],
+      "defaultEffort": "light",
+      "notes": "Conditioning; counts toward general activity, not hypertrophy volume. Normal walking load is well-tolerated."
+    },
+    {
+      "name": "Stationary bike",
+      "primaryMuscles": ["quads"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "steady_cardio",
+      "pattern": "cardio",
+      "clinicalTags": ["left_knee_priority"],
+      "defaultEffort": "light",
+      "notes": "Conditioning; low-impact, knee-friendly. Quad involvement is light."
+    },
+    {
+      "name": "Cat–cow",
+      "primaryMuscles": [],
+      "secondaryMuscles": ["core"],
+      "equivalenceClass": "spine_mobility",
+      "pattern": "mobility",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "No volume credit. Unloaded gentle flexion/extension cycling — fine."
+    },
+    {
+      "name": "Open-book stretch",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "equivalenceClass": "thoracic_mobility",
+      "pattern": "mobility",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Thoracic rotation mobility. No volume credit."
+    },
+    {
+      "name": "World's greatest stretch",
+      "primaryMuscles": [],
+      "secondaryMuscles": [],
+      "equivalenceClass": "full_mobility",
+      "pattern": "mobility",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Hip/thoracic mobility. No volume credit."
+    },
+    {
+      "name": "Air squat",
+      "primaryMuscles": ["quads"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "squat_pattern",
+      "pattern": "squat",
+      "clinicalTags": ["bilateral_masks_left"],
+      "defaultEffort": "medium",
+      "notes": "Bilateral bodyweight can hide the left VMO deficit — don't let it crowd out unilateral + left-biased work."
+    },
+    {
+      "name": "Split squat (DB)",
+      "primaryMuscles": ["quads"],
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equivalenceClass": "unilateral_squat",
+      "pattern": "squat",
+      "clinicalTags": ["left_knee_priority"],
+      "defaultEffort": "medium",
+      "notes": "Unilateral loading — the rehab lever for the left-knee AMI deficit."
+    },
+    {
+      "name": "Hip hinge",
+      "primaryMuscles": ["hamstrings"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "hip_hinge",
+      "pattern": "hinge",
+      "clinicalTags": ["spine_neutral_req"],
+      "defaultEffort": "medium",
+      "notes": "Allowed but the one movement to cue carefully: neutral spine only, no loaded end-range lumbar flexion."
+    },
+    {
+      "name": "Leg curl",
+      "primaryMuscles": ["hamstrings"],
+      "secondaryMuscles": ["calves"],
+      "equivalenceClass": "knee_flexion_iso",
+      "pattern": "isolation",
+      "clinicalTags": ["left_knee_priority"],
+      "defaultEffort": "medium",
+      "notes": "Knee flexion (not extension) — fine for the left knee."
+    },
+    {
+      "name": "Back extension (chair/roman)",
+      "primaryMuscles": ["erectors"],
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equivalenceClass": "back_extension",
+      "pattern": "hinge",
+      "clinicalTags": ["extension_biased", "spine_protective"],
+      "defaultEffort": "medium",
+      "notes": "Extension-biased — actively good for the L5–S1 picture."
+    },
+    {
+      "name": "Reverse lunge",
+      "primaryMuscles": ["quads"],
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equivalenceClass": "unilateral_squat",
+      "pattern": "squat",
+      "clinicalTags": ["left_knee_priority"],
+      "defaultEffort": "medium",
+      "notes": "Unilateral swap for the split squat; prioritize left side."
+    },
+    {
+      "name": "Wall sit",
+      "primaryMuscles": ["quads"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "squat_pattern",
+      "pattern": "squat",
+      "clinicalTags": ["left_knee_priority"],
+      "defaultEffort": "medium",
+      "notes": "Low-shear isometric; knee-friendly."
+    },
+    {
+      "name": "Calf raise",
+      "primaryMuscles": ["calves"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "calf_raise",
+      "pattern": "isolation",
+      "clinicalTags": ["left_bias_target"],
+      "defaultEffort": "medium",
+      "notes": "Cue/track the left gastroc specifically (left under-recruitment finding)."
+    },
+    {
+      "name": "Tibial raise",
+      "primaryMuscles": ["tibialis"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "tib_raise",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": "Anterior-shin balance work."
+    },
+    {
+      "name": "Single-leg calf raise",
+      "primaryMuscles": ["calves"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "calf_raise",
+      "pattern": "isolation",
+      "clinicalTags": ["left_bias_target"],
+      "defaultEffort": "medium",
+      "notes": "Isolates the under-recruited left calf."
+    },
+    {
+      "name": "Banded hip-abductor work",
+      "primaryMuscles": ["hip_abductors"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "hip_abductor_iso",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": ""
+    },
+    {
+      "name": "Clamshell (band around quads)",
+      "primaryMuscles": ["hip_abductors"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "hip_abductor_iso",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": ""
+    },
+    {
+      "name": "Resistance-band lateral walk",
+      "primaryMuscles": ["hip_abductors"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "hip_abductor_iso",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": "Direct swap for clamshells (same equivalence class)."
+    },
+    {
+      "name": "Banded hip-flexor / front raise",
+      "primaryMuscles": ["hip_flexors"],
+      "secondaryMuscles": ["quads"],
+      "equivalenceClass": "hip_flexor_iso",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": ""
+    },
+    {
+      "name": "Banded hip-adductor squeeze",
+      "primaryMuscles": ["hip_adductors"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "hip_adductor_iso",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "medium",
+      "notes": "Balances the abductor work."
+    },
+    {
+      "name": "Glute bridge (floor)",
+      "primaryMuscles": ["glutes"],
+      "secondaryMuscles": ["hamstrings", "core"],
+      "equivalenceClass": "bridge",
+      "pattern": "core",
+      "clinicalTags": ["extension_biased", "spine_protective"],
+      "defaultEffort": "medium",
+      "notes": "Actively protective: extension pushes nucleus anteriorly, away from posterior neural structures."
+    },
+    {
+      "name": "Side bridge / side plank",
+      "primaryMuscles": ["core"],
+      "secondaryMuscles": ["hip_abductors"],
+      "equivalenceClass": "side_core",
+      "pattern": "core",
+      "clinicalTags": ["spine_neutral_req"],
+      "defaultEffort": "medium",
+      "notes": "Obliques/QL. Keep neutral spine."
+    },
+    {
+      "name": "Dead bug",
+      "primaryMuscles": ["core"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "anti_extension_core",
+      "pattern": "core",
+      "clinicalTags": ["spine_protective"],
+      "defaultEffort": "medium",
+      "notes": "Trains neutral-spine control (anti-extension)."
+    },
+    {
+      "name": "Bird-dog",
+      "primaryMuscles": ["core", "erectors"],
+      "secondaryMuscles": ["glutes"],
+      "equivalenceClass": "anti_extension_core",
+      "pattern": "core",
+      "clinicalTags": ["spine_protective"],
+      "defaultEffort": "medium",
+      "notes": "Hands-and-knees offloads the disc."
+    },
+    {
+      "name": "Chest press (cable or DB)",
+      "primaryMuscles": ["chest"],
+      "secondaryMuscles": ["front_delts", "triceps"],
+      "equivalenceClass": "horizontal_press",
+      "pattern": "press",
+      "clinicalTags": ["elbow_monitor"],
+      "defaultEffort": "medium",
+      "notes": "Fine at moderate load; don't make the arms the brute-force lever (ulnar history)."
+    },
+    {
+      "name": "Dumbbell lateral raise",
+      "primaryMuscles": ["side_delts"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "lateral_raise",
+      "pattern": "isolation",
+      "clinicalTags": ["elbow_monitor"],
+      "defaultEffort": "medium",
+      "notes": "Keep load light."
+    },
+    {
+      "name": "Tricep extension",
+      "primaryMuscles": ["triceps"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "tricep_iso",
+      "pattern": "isolation",
+      "clinicalTags": ["elbow_monitor"],
+      "defaultEffort": "medium",
+      "notes": "Loaded elbow extension — keep moderate."
+    },
+    {
+      "name": "Machine / cable row",
+      "primaryMuscles": ["upper_back"],
+      "secondaryMuscles": ["lats", "biceps", "rear_delts"],
+      "equivalenceClass": "horizontal_row",
+      "pattern": "pull",
+      "clinicalTags": ["spine_neutral_req", "elbow_monitor"],
+      "defaultEffort": "medium",
+      "notes": "Seated/supported keeps the spine neutral; moderate arm load."
+    },
+    {
+      "name": "Cable face pull",
+      "primaryMuscles": ["rear_delts"],
+      "secondaryMuscles": ["traps", "upper_back"],
+      "equivalenceClass": "rear_delt_face",
+      "pattern": "pull",
+      "clinicalTags": ["elbow_monitor"],
+      "defaultEffort": "light",
+      "notes": "Light."
+    },
+    {
+      "name": "Loop-band scapular/delt retraction",
+      "primaryMuscles": ["rear_delts"],
+      "secondaryMuscles": ["traps"],
+      "equivalenceClass": "rear_delt_face",
+      "pattern": "pull",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Light; rehab-style."
+    },
+    {
+      "name": "Prone W's (DB)",
+      "primaryMuscles": ["traps", "rear_delts"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "prone_scap_raise",
+      "pattern": "pull",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Prone, light DBs. Lower-trap / scapular stabilizer work."
+    },
+    {
+      "name": "Dumbbell shrug",
+      "primaryMuscles": ["traps"],
+      "secondaryMuscles": ["forearms"],
+      "equivalenceClass": "shrug",
+      "pattern": "isolation",
+      "clinicalTags": ["elbow_monitor"],
+      "defaultEffort": "medium",
+      "notes": "Grip/bracing load through the arms."
+    },
+    {
+      "name": "Prone Y/T raise",
+      "primaryMuscles": ["traps", "rear_delts"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "prone_scap_raise",
+      "pattern": "pull",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Swap partner for prone W's."
+    },
+    {
+      "name": "Supine chin-tuck + slight head raise",
+      "primaryMuscles": ["neck"],
+      "secondaryMuscles": [],
+      "equivalenceClass": "neck_flexor",
+      "pattern": "isolation",
+      "clinicalTags": [],
+      "defaultEffort": "light",
+      "notes": "Cervical MRI normal — safe. Stop if it provokes suboccipital guarding."
+    }
+  ]
+}
