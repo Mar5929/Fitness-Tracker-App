@@ -368,7 +368,7 @@ key and the data.
 | Phase | Deliverable | Why this order |
 |-------|-------------|----------------|
 | **0** | This design doc + Mike's starter exercise list + agreed muscle taxonomy ✅ *(library seeded in `exercise-library.md`, 2026-06-27)* | align before code |
-| **1** | Xcode project, data model, **Log screen + NL parse** working end-to-end. Full build contract: `docs/phase-1-spec.md` | capture is the core value; prove it first |
+| **1** | Xcode project, data model, **Log screen + NL parse** working end-to-end. Full build contract: `docs/phase-1-spec.md` ✅ *(code written 2026-06-28 on branch `claude/app-planning-build-b7s0tt`; pending Mac compile/Simulator verify — see `docs/STATUS.md`)* | capture is the core value; prove it first |
 | **2** | **Balance screen** (volume + readiness from real logged data) | the over/under answer |
 | **3** | **Today screen** — Claude generation + swap with clinical constraints | the planner |
 | **4** | **Coach Agent** — chat surface + tool layer (§7b), auto/confirm tiers, change-undo log, clinical-deferral guardrail | the "manage my fitness" agent |
