@@ -5,11 +5,13 @@
 > it's the handoff to the next session.
 
 - **Last updated:** 2026-06-28
-- **Last session did:** Built Phase 1 (Xcode scaffold + data model + seed + Log
-  screen + NL parse + Settings/Keychain) and the session-continuity system
-  (`CLAUDE.md`, this file, SessionStart hook).
+- **Last session did:** Built Phase 1 + the session-continuity system; then PR was
+  merged to `main`. Did Phase 2 prep: researched volume/recovery literature and
+  wrote `docs/phase-2-prep.md` (taxonomy lock + per-group MEV/MAV/MRV + recovery
+  `tau`) — **awaiting owner approval.**
 - **Active branch:** `claude/app-planning-build-b7s0tt`
-- **Current phase:** **Phase 1 — code complete, pending Mac verification.**
+- **Current phase:** **Phase 1 merged but NOT Mac-verified** · **Phase 2 prep
+  proposal awaiting owner sign-off.**
 
 ---
 
@@ -27,18 +29,25 @@
 
 ---
 
-## Immediate next action (do this first)
+## Immediate next actions
 
-**Verify Phase 1 on a Mac.** This repo was written in a Linux container with no
-Xcode toolchain, so Phase 1 has not been compiled. Run the steps in
-[`RUNNING.md`](RUNNING.md):
+**(A) OWNER: verify Phase 1 on a Mac.** Written in a Linux container with no Xcode
+toolchain, so it has not been compiled. Run the steps in [`RUNNING.md`](RUNNING.md):
 1. `open Anchor.xcodeproj`, build for an iPhone simulator, run.
-2. Do the smoke test: log `3 sets of calf raises and a few hard rows` with **no
-   API key** → expect two correct sets + an undoable confirmation.
-3. Fix any compile errors (the hand-authored `project.pbxproj` and SwiftData
-   relationship graph are the most likely suspects — see "Risks" below).
-4. When it builds + the smoke test passes, mark Phase 1 ✅ verified here and in
-   `DESIGN.md §10`.
+2. Smoke test: log `3 sets of calf raises and a few hard rows` with **no API
+   key** → expect two correct sets + an undoable confirmation.
+3. Fix any compile errors (hand-authored `project.pbxproj` and the SwiftData
+   relationship graph are the likeliest suspects — see "Risks").
+4. When it builds + the smoke test passes, mark Phase 1 ✅ verified here + `DESIGN.md §10`.
+
+**(B) OWNER: approve Phase 2 prep.** Review [`phase-2-prep.md`](phase-2-prep.md)
+and reply approve / line-edits on: the 21-group taxonomy lock, adding 1 direct
+biceps movement, left/right = cue-only, and the per-group MEV/MAV/MRV + `tau`
+table. This unblocks Phase 2.
+
+**(C) NEXT AGENT (after B):** write the approved constants into `seed.json` +
+`MuscleGroup` (replacing zeros), add the biceps movement if approved, then build
+the **Balance** screen (per-muscle volume-vs-band + readiness bars, Swift Charts).
 
 ---
 
@@ -69,12 +78,13 @@ Xcode toolchain, so Phase 1 has not been compiled. Run the steps in
 ## Open decisions blocking later phases (OWNER TODO)
 
 These are owner calls, flagged in `DESIGN.md §11` and `docs/muscle-taxonomy.md`.
-**Phase 2 (Balance) cannot give a trustworthy signal until they're settled:**
-1. **Lock the final muscle taxonomy** (confirm/adjust the provisional 21).
-2. **Per-group tuning constants** — recovery `tau` + volume landmarks
-   MEV/MAV/MRV, evidence-grounded.
-3. **Biceps/forearms** — add direct movements or leave secondary-only?
-4. **Left/right tracking** — per-group split, or cue-only note?
+**Phase 2 (Balance) cannot give a trustworthy signal until they're settled.**
+➡️ **All four now have a concrete recommendation in
+[`phase-2-prep.md`](phase-2-prep.md) — awaiting owner approval:**
+1. **Lock the final muscle taxonomy** — proposed: keep 21, flag tibialis+neck as tracked-not-banded.
+2. **Per-group tuning constants** — proposed table of `tau` + MEV/MAV/MRV (§4 of prep doc).
+3. **Biceps/forearms** — proposed: add 1 direct biceps (`elbow_monitor`), forearms secondary-only.
+4. **Left/right tracking** — proposed: cue-only, not a per-side data split.
 
 ---
 
